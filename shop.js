@@ -42,7 +42,7 @@ for(let i=0;i<carts.length;i++){
                <p class="billn">${name}</p>
                <p class="billp">${price}</p>
                <img class="billi" src="${img}">
-               <ion-icon  name="trash-outline"></ion-icon>
+               <ion-icon id="bin" onclick="bin(${allpics.length-1},this)" name="trash-outline"></ion-icon>
             </div>
           `;
 
@@ -82,3 +82,23 @@ function calculateTotal() {
 }
 
 calculateTotal()
+
+function bin(i,icon){
+    
+        let allpics = JSON.parse(localStorage.getItem("allpic"));
+        if(confirm("delete ??")){
+            
+
+            allpics.splice(i,1)
+
+            localStorage.setItem("allpic",JSON.stringify(allpics));
+            
+            icon.parentElement.remove();
+            count--;
+            carttotal.textContent=count;
+
+            calculateTotal();
+
+        }
+    
+}
