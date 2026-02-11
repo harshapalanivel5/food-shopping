@@ -1,6 +1,7 @@
 body{
     background-color: rgb(15, 13, 13);
 }
+
 #head{
     background-color: red;
     display: flex; 
@@ -133,4 +134,5 @@ ion-icon {
 .billi{
      width: 100px;
      height: 100px;
+
 }
